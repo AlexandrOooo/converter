@@ -1,0 +1,53 @@
+<div class="converter">
+  <div class="exchangeCurrencyBlock">
+    <input
+      class="converterInput"
+      [(ngModel)]="firstExchangeValue"
+      type="number"
+      (input)="calculateValue(secondExchangeFieldId)"
+      (focus)="getExchangeRate(firstExchangeFieldId)"
+    />
+    <select
+      class="converterSelect"
+      name=""
+      id=""
+      [(ngModel)]="firstExchangeCurrency"
+      (change)="changeCurrency(firstExchangeFieldId)"
+    >
+      @for(currency of currencies; track currency){
+      <option
+        [value]="currency"
+        [disabled]="secondExchangeCurrency === currency"
+      >
+        {{ currency }}
+      </option>
+      " }
+    </select>
+  </div>
+  <div class="exchangeCurrencyBlock">
+    <input
+      class="converterInput"
+      type="number"
+      [(ngModel)]="secondExchangeValue"
+      (input)="calculateValue(firstExchangeFieldId)"
+      (focus)="getExchangeRate(secondExchangeFieldId)"
+    />
+    <select
+      name=""
+      class="converterSelect"
+      id=""
+      [(ngModel)]="secondExchangeCurrency"
+      (change)="changeCurrency(secondExchangeFieldId)"
+    >
+      @for(currency of currencies; track currency){
+      <option
+        class="converterOption"
+        [value]="currency"
+        [disabled]="firstExchangeCurrency === currency"
+      >
+        {{ currency }}
+      </option>
+      }
+    </select>
+  </div>
+</div>

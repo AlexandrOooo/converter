@@ -1,0 +1,16 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: cadetblue;
+  height: 140px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+}
+.exchangeRate {
+  color: white;
+  font-size: 24px;
+}
